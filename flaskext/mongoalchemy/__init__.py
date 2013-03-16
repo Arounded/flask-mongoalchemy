@@ -223,7 +223,7 @@ class BaseQuery(query.Query):
             abort(404)
         return document
 
-    def paginate(self, page, per_page=20, error_out=True):
+    def paginate(self, page, per_page=20, error_out=True, skipped=0):
         """Returns ``per_page`` items from page ``page`` By default, it will
         abort with 404 if no items were found and the page was larger than 1.
         This behaviour can be disabled by setting ``error_out`` to ``False``.
@@ -232,7 +232,8 @@ class BaseQuery(query.Query):
         if page < 1 and error_out:
             abort(404)
 
-        items = self.skip((page - 1) * per_page).limit(per_page).all()
+        items = self.skip(((page - 1) * per_page) - skipped).limit(
+            per_page).all()
 
         if len(items) < 1 and page != 1 and error_out:
             abort(404)
