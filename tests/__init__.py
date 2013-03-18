@@ -7,7 +7,7 @@
 from mocker import MockerTestCase
 from flask import Flask
 from werkzeug.exceptions import NotFound
-from flaskext import mongoalchemy
+from flask.ext import mongoalchemy
 from tests.helpers import _make_todo_document
 
 class BaseTestCase(MockerTestCase):

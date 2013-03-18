@@ -3,14 +3,11 @@
 # Copyright 2010 flask-mongoalchemy authors. All rights reserved.
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
-
-from __future__ import absolute_import
-
 from math import ceil
 from mongoalchemy import document, exceptions, fields, session, query
 from flask import abort
 
-from flaskext.mongoalchemy.meta import make_document_class
+from .meta import make_document_class
 
 
 def _include_mongoalchemy(obj):
