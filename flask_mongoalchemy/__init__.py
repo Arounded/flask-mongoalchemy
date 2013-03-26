@@ -229,7 +229,7 @@ class BaseQuery(query.Query):
         if page < 1 and error_out:
             abort(404)
 
-        items = self.skip(((page - 1) * per_page) - skipped).limit(
+        items = self.skip(((int(page) - 1) * per_page) - skipped).limit(
             per_page).all()
 
         if len(items) < 1 and page != 1 and error_out:
