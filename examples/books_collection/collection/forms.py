@@ -1,16 +1,20 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2010 flask-mongoalchemy authors. All rights reserved.
+# Copyright 2014 flask-mongoalchemy authors. All rights reserved.
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
-from flaskext import wtf
+import wtforms
+from flask.ext import wtf
+from wtforms import validators
+
 from collection.documents import Book
+
 
 class BookForm(wtf.Form):
     document_class = Book
-    title = wtf.TextField(validators=[wtf.Required()])
-    year = wtf.IntegerField(validators=[wtf.Required()])
+    title = wtforms.TextField(validators=[validators.Required()])
+    year = wtforms.IntegerField(validators=[validators.Required()])
     instance = None
 
     def __init__(self, document=None, *args, **kwargs):

@@ -6,7 +6,7 @@
 Welcome to Flask MongoAlchemy's documentation!
 ==============================================
 
-.. module:: flaskext.mongoalchemy
+.. module:: flask.ext.mongoalchemy
 
 Flask-MongoAlchemy adds support for `MongoDB`_ on `Flask`_ using `MongoAlchemy`_. Source code and issue tracking are available at `Github`_. If you want to get started, check out the `example source code <http://github.com/cobrateam/flask-mongoalchemy/tree/master/examples>`_.
 
@@ -157,6 +157,11 @@ The following configuration values are present in Flask-MongoAlchemy:
                                 database based authentication.
 
                                 *Default value:* ``True``
+
+ ``MONGOALCHEMY_REPLICA_SET``   Name of the replica set to be used. Empty for
+                                no replica sets.
+
+                                *Default value:* ````
 
 =============================== =========================================
 

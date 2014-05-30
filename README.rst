@@ -42,6 +42,18 @@ Community
 Changelog
 +++++++++
 
+Flask-MongoAlchemy 0.6.1
+------------------------
+
+ * Replica set support, via the MONGOALCHEMY_REPLICA_SET configuration value.
+
+Flask-MongoAlchemy 0.6.0
+------------------------
+
+ * Use the not-so-new extension scheme for Flask, users now should import the
+   extension using the flask.ext metapackage
+ * Some fixes in the docs, regarding other extensions usage in examples
+
 Flask-MongoAlchemy 0.5.4
 ------------------------
 
